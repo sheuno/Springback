@@ -1,35 +1,36 @@
 # Springback
 
-The Springback control behaves like a spring-loaded joystick which returns to its center position. However, with the Springback control, the centre (or origin) can be anywhere in a window since it's the initial touch down point. The control also has a return delay which determines how quickly the joystick returns to its starting point.
+The Springback control behaves like a spring-loaded joystick which returns to its central position. However, with the Springback control, the central position or *touch down origin* (TDO) can be anywhere inside a window. A finger drag action causes the control to move away from that TDO. Whilst a touch up action causes the control to return to the TDO at a specified/configurable rate.
 
-The demonstration shows how the Springback control can be used to pan quickly (or slowly) over a very large area and how accurately it can reach a precise destination. All this can be achieved without excessing swiping.
+The demonstration shows how the Springback control can be used to
+- pan quickly (or slowly) over a very large area
+- reach a specific destination very accurately without overshooting
+- provide an alternative maneuver mechanism to excessive swiping
 
 # Technical
 
-Demo uses a storyboard consisting of two view controllers
+The demo uses a storyboard consisting of two view controllers
+- ViewController.m - an ObjC view controller which references an ObjC Springback control (class SpringbackControl)
+- ViewControllerSw.m - an ObjC view controller which references a Swift Springback control (class SpringbackControlSw) ... *this one is for all you Swift pioneers!*
 
-ViewController.m - ObjC controller with embedded ObjC SpringbackControl (SpringbackControl)
-ViewControllerSw.m - ObjC controller with embedded Swift SpringbackControl (SpringbackControlSw)
+The two pieces of code are almost identifical except for the type of SpringbackControl instance.
 
-The two pieces of code are almost identifical excetpt for the embedded SpringbackControl.
-
-To embed the control into your own projects, you only need the files under the Control group/folder, and the control can be configured like any other standard control in Interface Builder.
+To embed the control into your own projects, you need only the files under the *Control* group/folder, and the control can be created programmatically or accessed like any other standard control in Interface Builder.
 
 # Objc
 
-Tracing is turned on/off using a custom flag SBCLOG_LEVEL=1, 2 or 3
-(1 is quite, 3 is noisy)
+Tracing is turned on/off using a compiler preprocessing setting of SBCLOG_LEVEL=1, 2 or 3  
+(1 is quiet, 3 is noisy)
 
 # Swift
 
-This is version 2.2. Not migrated to 3.0 yet. Sorry for any incompatibility issues.
-Tracing is turned on/off using a custom flag -DSBCLOG_LEVEL1, -DSBCLOG_LEVEL2, or -DSBCLOG_LEVEL3
-(1 is quite, 3 is noisy)
+This code is version 2.2. I've not migrated to 3.0 yet, so apologies for any incompatibility issues.  
+Tracing is turned on/off using a custom flag -DSBCLOG_LEVEL1, -DSBCLOG_LEVEL2, or -DSBCLOG_LEVEL3  
+(1 is quiet, 3 is noisy)
 
+*(Oh, and please don't complain about the direction of the "Reverse Pan" setting. That's part of the demo, not the actual control)*
 
-(Oh, and please don't complain about the direction of the "Reverse Pan" setting. That's part of the demo, not the actual control)
-
-Have fun
+Have fun  
 Sheun
 
 # Contact
@@ -39,4 +40,5 @@ Sheun Olatunbosun
 
 # License
 
-Apache License, Version 2.0, Copyright (c) 2016 Sheun Olatunbosun
+Apache License, Version 2.0,  
+Copyright (c) 2016 Sheun Olatunbosun
