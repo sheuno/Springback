@@ -18,7 +18,6 @@
 		3848C80B1DEA0D7C00736A45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3848C7F81DEA08CE00736A45 /* Assets.xcassets */; };
 		3848C8111DEA0E8D00736A45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3848C80D1DEA0E8D00736A45 /* LaunchScreen.storyboard */; };
 		3848C8121DEA0E8D00736A45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3848C80F1DEA0E8D00736A45 /* Main.storyboard */; };
-		3848C8141DEA1A8C00736A45 /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3848C8131DEA1A8C00736A45 /* Readme.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +39,6 @@
 		3848C8021DEA08CF00736A45 /* ViewControllerSw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerSw.m; path = Demo/ViewControllerSw.m; sourceTree = "<group>"; };
 		3848C80E1DEA0E8D00736A45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Demo/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3848C8101DEA0E8D00736A45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Demo/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3848C8131DEA1A8C00736A45 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Readme.txt; path = Demo/Readme.txt; sourceTree = "<group>"; };
 		389860CA1DA0A2B200FA4127 /* Springback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Springback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -96,7 +94,6 @@
 		389861091DA0AC8F00FA4127 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				3848C8131DEA1A8C00736A45 /* Readme.txt */,
 				3848C7F61DEA08CE00736A45 /* AppDelegate.h */,
 				3848C7F71DEA08CE00736A45 /* AppDelegate.m */,
 				3848C7FF1DEA08CF00736A45 /* ViewController.h */,
@@ -174,7 +171,6 @@
 			files = (
 				3848C8121DEA0E8D00736A45 /* Main.storyboard in Resources */,
 				3848C80B1DEA0D7C00736A45 /* Assets.xcassets in Resources */,
-				3848C8141DEA1A8C00736A45 /* Readme.txt in Resources */,
 				3848C8111DEA0E8D00736A45 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
