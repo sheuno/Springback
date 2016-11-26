@@ -37,6 +37,7 @@ Sheun
 
 Sheun Olatunbosun
 - https://github.com/sheuno
+- sheuno@gmail.com
 
 # License
 
