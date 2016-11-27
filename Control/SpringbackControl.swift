@@ -78,13 +78,13 @@ public class SpringbackControlSw : UIControl {
     // 0 - none, 1 - minimal, 2 - detail, 3 - noisy!
 
 #if SBCLOG_LEVEL1
-        let maxTraceLevel:UInt = 1
+        private let maxTraceLevel:UInt = 1
 #elseif SBCLOG_LEVEL2
-        let maxTraceLevel:UInt = 2
+        private let maxTraceLevel:UInt = 2
 #elseif SBCLOG_LEVEL3
-        let maxTraceLevel:UInt = 3
+        private let maxTraceLevel:UInt = 3
 #else
-        let maxTraceLevel:UInt = 0
+        private let maxTraceLevel:UInt = 0
 #endif
     
     private func SBCLog(level:UInt, _ format:String, _ args:CVarArgType...) -> Void
@@ -109,13 +109,13 @@ public class SpringbackControlSw : UIControl {
     private var originKnobView : KnobView?
     private var knobView : KnobView?
     
-    var isDraggingKnob = false
-    var origin : CGPoint = CGPointZero
-    var deltaX : CGFloat = 0.0
-    var deltaY : CGFloat = 0.0
-    var stepCountDown : UInt = 0
-    var currentPosition : CGPoint = CGPointZero
-    var tickCounter : UInt = 0
+    private var isDraggingKnob = false
+    private var origin : CGPoint = CGPointZero
+    private var deltaX : CGFloat = 0.0
+    private var deltaY : CGFloat = 0.0
+    private var stepCountDown : UInt = 0
+    private var currentPosition : CGPoint = CGPointZero
+    private var tickCounter : UInt = 0
     
     private func setupKnobViewsAndTimer() -> Void
     {
