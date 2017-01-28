@@ -87,7 +87,7 @@ public class SpringbackControlSw : UIControl {
         private let maxTraceLevel:UInt = 0
 #endif
     
-    private func SBCLog(level:UInt, _ format:String, _ args:CVarArgType...) -> Void
+    private func SBCLog(_ level:UInt, _ format:String, _ args:CVarArg...) -> Void
     {
         if (level <= maxTraceLevel)
         {
@@ -99,10 +99,10 @@ public class SpringbackControlSw : UIControl {
     
     // constants
     
-    let KNOB_SIZE : UInt = 40
-    let MAX_STEP  : UInt = 100
-    let MAX_RETURN_DELAY : UInt = 50
-    let MAX_DEAD_ZONE : UInt = 30
+    private let KNOB_SIZE : UInt = 40
+    private let MAX_STEP  : UInt = 100
+    private let MAX_RETURN_DELAY : UInt = 50
+    private let MAX_DEAD_ZONE : UInt = 30
     
     // properties (internal)
     
@@ -110,34 +110,34 @@ public class SpringbackControlSw : UIControl {
     private var knobView : KnobView?
     
     private var isDraggingKnob = false
-    private var origin : CGPoint = CGPointZero
+    private var origin : CGPoint = CGPoint.zero
     private var deltaX : CGFloat = 0.0
     private var deltaY : CGFloat = 0.0
     private var stepCountDown : UInt = 0
-    private var currentPosition : CGPoint = CGPointZero
+    private var currentPosition : CGPoint = CGPoint.zero
     private var tickCounter : UInt = 0
     
     private func setupKnobViewsAndTimer() -> Void
     {
         let kbs = CGFloat(KNOB_SIZE)
-        self.knobView = KnobView(frame:CGRectMake(0, 0, kbs, kbs))
-        self.knobView!.backgroundColor = UIColor.clearColor()
-        self.knobView!.tintColor = UIColor.blackColor()
+        self.knobView = KnobView(frame:CGRect(x: 0, y: 0, width: kbs, height: kbs))
+        self.knobView!.backgroundColor = UIColor.clear
+        self.knobView!.tintColor = UIColor.black
         self.addSubview(self.knobView!)
         
-        self.originKnobView = KnobView(frame:CGRectMake(0, 0, kbs, kbs))
-        self.originKnobView!.backgroundColor = UIColor.clearColor()
-        self.originKnobView!.tintColor = UIColor.whiteColor()
+        self.originKnobView = KnobView(frame:CGRect(x: 0, y: 0, width: kbs, height: kbs))
+        self.originKnobView!.backgroundColor = UIColor.clear
+        self.originKnobView!.tintColor = UIColor.white
         self.addSubview(self.originKnobView!)
         
-        self.knobView!.hidden = true
-        self.originKnobView!.hidden = true
+        self.knobView!.isHidden = true
+        self.originKnobView!.isHidden = true
         
         let sel = #selector(SpringbackControlSw.timerTick)
-        NSTimer.scheduledTimerWithTimeInterval(0.001, target:self, selector:sel, userInfo:nil, repeats:true)
+        Timer.scheduledTimer(timeInterval: 0.001, target:self, selector:sel, userInfo:nil, repeats:true)
     }
     
-    @objc private func timerTick(tm: NSTimer)
+    @objc private func timerTick(_ tm: Timer)
     {
         self.tickCounter += 1
         
@@ -157,30 +157,30 @@ public class SpringbackControlSw : UIControl {
                     
                     if (self.stepCountDown == 0)
                     {
-                        self.originKnobView!.hidden = true
-                        self.knobView!.hidden = true
+                        self.originKnobView!.isHidden = true
+                        self.knobView!.isHidden = true
                     }
                 }
             }
         }
     }
     
-    override public var enabled : Bool
+    override public var isEnabled : Bool
     {
         didSet {
-            if (enabled)
+            if (isEnabled)
             {
                 let hideKnobs = !self.showKnobs || (self.hOffset == 0 && self.vOffset == 0);
-                self.knobView!.hidden = hideKnobs;
-                self.originKnobView!.hidden = hideKnobs;
-                self.backgroundColor = UIColor.clearColor()
+                self.knobView!.isHidden = hideKnobs;
+                self.originKnobView!.isHidden = hideKnobs;
+                self.backgroundColor = UIColor.clear
                 self.alpha = 1.0;
             }
             else
             {
-                self.knobView!.hidden = true;
-                self.originKnobView!.hidden = true;
-                self.backgroundColor = UIColor.blackColor()
+                self.knobView!.isHidden = true;
+                self.originKnobView!.isHidden = true;
+                self.backgroundColor = UIColor.black
                 self.alpha = 0.5
             }
         }
@@ -226,7 +226,7 @@ public class SpringbackControlSw : UIControl {
         }
     }
     
-    private func adjustValue(v:CGFloat, forDeadZone dz:CGFloat) -> CGFloat
+    private func adjustValue(_ v:CGFloat, forDeadZone dz:CGFloat) -> CGFloat
     {
         if (v > -dz && v < dz) { return 0 }
         
@@ -235,20 +235,20 @@ public class SpringbackControlSw : UIControl {
         return v-dz
     }
     
-    private func moveKnobView(v:UIView, toPoint p:CGPoint)
+    private func moveKnobView(_ v:UIView, toPoint p:CGPoint)
     {
         if (self.showKnobs)
         {
             let ks = CGFloat(KNOB_SIZE)
-            let r = CGRectMake(p.x - ks/2, p.y - ks/2, ks, ks)
+            let r = CGRect(x: p.x - ks/2, y: p.y - ks/2, width: ks, height: ks)
             v.frame = r
-            v.hidden = false
+            v.isHidden = false
         }
     }
     
     private func sendOffsetChangeAlert()
     {
-        self.sendActionsForControlEvents(UIControlEvents.ValueChanged)
+        self.sendActions(for: UIControlEvents.valueChanged)
     }
     
     private func performReturnToOrigin() -> Bool
@@ -260,11 +260,11 @@ public class SpringbackControlSw : UIControl {
         let x = self.origin.x + (self.deltaX * CGFloat(self.stepCountDown)) / CGFloat(MAX_STEP)
         let y = self.origin.y + (self.deltaY * CGFloat(self.stepCountDown)) / CGFloat(MAX_STEP)
         
-        self.currentPosition = CGPointMake(x, y)
+        self.currentPosition = CGPoint(x: x, y: y)
         return true
     }
     
-    private func handleTouchDownAtPoint(p:CGPoint)
+    private func handleTouchDownAtPoint(_ p:CGPoint)
     {
         self.origin = p;
         self.stepCountDown = 0;
@@ -281,17 +281,17 @@ public class SpringbackControlSw : UIControl {
         self.sendOffsetChangeAlert()
     }
     
-    private func handleTouchUpAtPoint(p:CGPoint)
+    private func handleTouchUpAtPoint(_ p:CGPoint)
     {
         if self.stepCountDown == 0 {
             // No dragging took place
-            self.originKnobView!.hidden = true
-            self.knobView!.hidden = true
+            self.originKnobView!.isHidden = true
+            self.knobView!.isHidden = true
         }
         self.isDraggingKnob = false;
     }
     
-    private func handleDragToPoint(p:CGPoint)
+    private func handleDragToPoint(_ p:CGPoint)
     {
         self.currentPosition = p
         self.stepCountDown = MAX_STEP
@@ -305,47 +305,47 @@ public class SpringbackControlSw : UIControl {
 
     // MARK: Touch Events
     
-    public override func beginTrackingWithTouch(touch:UITouch, withEvent event:UIEvent?) -> Bool
+    public override func beginTracking(_ touch:UITouch, with event:UIEvent?) -> Bool
     {
-        let p = touch.locationInView(self)
+        let p = touch.location(in: self)
         SBCLog(1, "Begin tracking -> %.f, %.f", p.x, p.y);
         self.handleTouchDownAtPoint(p)
         return true;
     }
     
-    public override func continueTrackingWithTouch(touch:UITouch, withEvent event:UIEvent?) -> Bool
+    public override func continueTracking(_ touch:UITouch, with event:UIEvent?) -> Bool
     {
-        let p = touch.locationInView(self)
+        let p = touch.location(in: self)
         SBCLog(2, "Continue tracking --> %.f, %.f", p.x, p.y);
         self.handleDragToPoint(p)
         return true;
     }
     
-    public override func endTrackingWithTouch(touch:UITouch?, withEvent event:UIEvent?)
+    public override func endTracking(_ touch:UITouch?, with event:UIEvent?)
     {
         if let tch = touch {
-            let p = tch.locationInView(self)
+            let p = tch.location(in: self)
             SBCLog(1, "End tracking --> %.f, %.f", p.x, p.y);
             self.handleTouchUpAtPoint(p)
         }
     }
     
     // MARK: Drawing
-    public override func drawRect(rect: CGRect)
+    public override func draw(_ rect: CGRect)
     {
-        super.drawRect(rect)
+        super.draw(rect)
         
         // Simple outline border rect
         
-        if self.enabled {
+        if self.isEnabled {
             self.tintColor.setStroke()
         }
         else {
-            UIColor.grayColor().setStroke()
+            UIColor.gray.setStroke()
         }
         let drawArea = self.bounds;
         let ctxt = UIGraphicsGetCurrentContext();
-        CGContextStrokeRectWithWidth(ctxt, drawArea, 4.0);
+        ctxt?.stroke(drawArea, width: 4.0);
     }
 }
 
@@ -354,15 +354,15 @@ public class SpringbackControlSw : UIControl {
 
 private class KnobView : UIView {
     
-    override func drawRect(rect: CGRect)
+    override func draw(_ rect: CGRect)
     {
-        super.drawRect(rect)
+        super.draw(rect)
         
         self.tintColor.setStroke()
         let ctxt = UIGraphicsGetCurrentContext()
-        CGContextSetLineWidth(ctxt, 3.0)
+        ctxt?.setLineWidth(3.0)
         var r = self.frame
-        r = CGRectMake(r.origin.x + 3.0, r.origin.y + 3.0, r.size.width - 2 * 3.0, r.size.height - 2 * 3.0)
-        CGContextStrokeEllipseInRect(ctxt, r)
+        r = CGRect(x: r.origin.x + 3.0, y: r.origin.y + 3.0, width: r.size.width - 2 * 3.0, height: r.size.height - 2 * 3.0)
+        ctxt?.strokeEllipse(in: r)
     }
 }
