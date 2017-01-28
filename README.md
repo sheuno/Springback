@@ -15,7 +15,7 @@ The demo uses a storyboard consisting of two view controllers
 
 The two pieces of code are almost identifical except for the type of SpringbackControl instance.
 
-To embed the control into your own projects, you need only the files under the *Control* group/folder, and the control can be created programmatically or accessed like any other standard control in Interface Builder.
+To embed the control into your own projects, you need only the files under the *Control* group/folder, and the control can be created programmatically or accessed like any other standard control in Interface Builder. Minimum deployment target is 9.0.
 
 # Objc
 
@@ -24,7 +24,7 @@ Tracing is turned on/off using a compiler preprocessing setting of SBCLOG_LEVEL=
 
 # Swift
 
-This code is version 2.2. I've not migrated to 3.0 yet, so apologies for any incompatibility issues.  
+This code is Swift 3.0 compliant.  
 Tracing is turned on/off using a custom flag -DSBCLOG_LEVEL1, -DSBCLOG_LEVEL2, or -DSBCLOG_LEVEL3  
 (1 is quiet, 3 is noisy)
 
