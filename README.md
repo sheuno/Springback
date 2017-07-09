@@ -9,13 +9,15 @@ The demonstration shows how the Springback control can be used to
 
 # Technical
 
-The demo uses a storyboard consisting of two view controllers
+The **Springback** demo uses a storyboard consisting of two view controllers
 - ViewController.m - an ObjC view controller which references an ObjC Springback control (class SpringbackControl)
 - ViewControllerSw.m - an ObjC view controller which references a Swift Springback control (class SpringbackControlSw) ... *this one is for all you Swift pioneers!*
 
 The two pieces of code are almost identifical except for the type of SpringbackControl instance.
 
 To embed the control into your own projects, you need only the files under the *Control* group/folder, and the control can be created programmatically or accessed like any other standard control in Interface Builder. Minimum deployment target is 9.0.
+
+The **Springbackswift** demo is similar but built from Swift-only code. It shares resources with the Objective C version, but the code is ALL Swift (inside the *DemoSwift* folder).
 
 # Objc
 
@@ -25,7 +27,7 @@ Tracing is turned on/off using a compiler preprocessing setting of SBCLOG_LEVEL=
 # Swift
 
 This code is Swift 3.0 compliant.  
-Tracing is turned on/off using a custom flag -DSBCLOG_LEVEL1, -DSBCLOG_LEVEL2, or -DSBCLOG_LEVEL3  
+Tracing is turned on/off by adjusting the *maxReportLevel* value in the TraceSetting class (SpringbackControl.swift) 
 (1 is quiet, 3 is noisy)
 
 *(Oh, and please don't complain about the direction of the "Reverse Pan" setting. That's part of the demo, not the actual control)*
@@ -42,4 +44,4 @@ Sheun Olatunbosun
 # License
 
 Apache License, Version 2.0,  
-Copyright (c) 2016 Sheun Olatunbosun
+Copyright (c) 2017 Sheun Olatunbosun
