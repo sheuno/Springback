@@ -8,10 +8,25 @@
 
 import UIKit
 
+private struct TraceSetting
+{
+    enum Kind : UInt
+    {
+        // Tracing with custom flag SBCLOG_LEVEL
+        // 0 - none, 1 - minimal, 2 - detail, 3 - noisy!
+        case none = 0
+        case minimal = 1
+        case detail = 2
+        case noisy = 3
+    }
+    
+    static let maxReportLevel: Kind = .minimal
+}
+
 @objc @IBDesignable
 public class SpringbackControlSw : UIControl {
 
-    /// MARK: parameters
+    // MARK: - parameters
     
     public var maxOffset : UInt {
         get { return MAX_STEP }
@@ -25,7 +40,7 @@ public class SpringbackControlSw : UIControl {
         get { return MAX_DEAD_ZONE }
     }
     
-    // MARK: properties
+    // MARK: - properties
     
     @IBInspectable public var showKnobs : Bool
     @IBInspectable public var deadZone : UInt {
@@ -50,7 +65,7 @@ public class SpringbackControlSw : UIControl {
     public private(set) var hOffset : CGFloat
     public private(set) var vOffset : CGFloat
     
-    // MARK: initializers
+    // MARK: - initializers
     
     public override init(frame: CGRect) {
         self.returnDelay = 10
@@ -73,23 +88,10 @@ public class SpringbackControlSw : UIControl {
     }
     
     // MARK: - implementation
-
-    // Tracing with custom flag SBCLOG_LEVEL
-    // 0 - none, 1 - minimal, 2 - detail, 3 - noisy!
-
-#if SBCLOG_LEVEL1
-        private let maxTraceLevel:UInt = 1
-#elseif SBCLOG_LEVEL2
-        private let maxTraceLevel:UInt = 2
-#elseif SBCLOG_LEVEL3
-        private let maxTraceLevel:UInt = 3
-#else
-        private let maxTraceLevel:UInt = 0
-#endif
     
-    private func SBCLog(_ level:UInt, _ format:String, _ args:CVarArg...) -> Void
+    private func SBCLog(_ level:TraceSetting.Kind, _ format:String, _ args:CVarArg...) -> Void
     {
-        if (level <= maxTraceLevel)
+        if (level.rawValue <= TraceSetting.maxReportLevel.rawValue)
         {
             withVaList(args){
                 NSLogv(format, $0)
@@ -165,21 +167,21 @@ public class SpringbackControlSw : UIControl {
         }
     }
     
-    override public var isEnabled : Bool
+    override open var isEnabled : Bool
     {
         didSet {
             if (isEnabled)
             {
-                let hideKnobs = !self.showKnobs || (self.hOffset == 0 && self.vOffset == 0);
-                self.knobView!.isHidden = hideKnobs;
-                self.originKnobView!.isHidden = hideKnobs;
+                let hideKnobs = !self.showKnobs || (self.hOffset == 0 && self.vOffset == 0)
+                self.knobView!.isHidden = hideKnobs
+                self.originKnobView!.isHidden = hideKnobs
                 self.backgroundColor = UIColor.clear
-                self.alpha = 1.0;
+                self.alpha = 1.0
             }
             else
             {
-                self.knobView!.isHidden = true;
-                self.originKnobView!.isHidden = true;
+                self.knobView!.isHidden = true
+                self.originKnobView!.isHidden = true
                 self.backgroundColor = UIColor.black
                 self.alpha = 0.5
             }
@@ -221,7 +223,7 @@ public class SpringbackControlSw : UIControl {
         
         if didChange
         {
-            SBCLog(3, "New Offset H: %.f, V: %.f", self.hOffset, self.vOffset);
+            SBCLog(.noisy, "New Offset H: %.f, V: %.f", self.hOffset, self.vOffset)
             self.sendOffsetChangeAlert()
         }
     }
@@ -303,35 +305,35 @@ public class SpringbackControlSw : UIControl {
         self.isDraggingKnob = true;
     }
 
-    // MARK: Touch Events
+    // MARK: - Touch Events
     
-    public override func beginTracking(_ touch:UITouch, with event:UIEvent?) -> Bool
+    open override func beginTracking(_ touch:UITouch, with event:UIEvent?) -> Bool
     {
         let p = touch.location(in: self)
-        SBCLog(1, "Begin tracking -> %.f, %.f", p.x, p.y);
+        SBCLog(.minimal, "Begin tracking -> %.f, %.f", p.x, p.y)
         self.handleTouchDownAtPoint(p)
         return true;
     }
     
-    public override func continueTracking(_ touch:UITouch, with event:UIEvent?) -> Bool
+    open override func continueTracking(_ touch:UITouch, with event:UIEvent?) -> Bool
     {
         let p = touch.location(in: self)
-        SBCLog(2, "Continue tracking --> %.f, %.f", p.x, p.y);
+        SBCLog(.detail, "Continue tracking --> %.f, %.f", p.x, p.y)
         self.handleDragToPoint(p)
         return true;
     }
     
-    public override func endTracking(_ touch:UITouch?, with event:UIEvent?)
+    open override func endTracking(_ touch:UITouch?, with event:UIEvent?)
     {
         if let tch = touch {
             let p = tch.location(in: self)
-            SBCLog(1, "End tracking --> %.f, %.f", p.x, p.y);
+            SBCLog(.minimal, "End tracking --> %.f, %.f", p.x, p.y)
             self.handleTouchUpAtPoint(p)
         }
     }
     
-    // MARK: Drawing
-    public override func draw(_ rect: CGRect)
+    // MARK: - Drawing
+    open override func draw(_ rect: CGRect)
     {
         super.draw(rect)
         

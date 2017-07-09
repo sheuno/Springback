@@ -8,16 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		3848C7F21DEA070600736A45 /* SpringbackControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3848C7F01DEA070600736A45 /* SpringbackControl.m */; };
-		3848C7F31DEA070600736A45 /* SpringbackControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3848C7F11DEA070600736A45 /* SpringbackControl.swift */; };
 		3848C7F51DEA08A700736A45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3848C7F41DEA08A700736A45 /* main.m */; };
 		3848C8031DEA08CF00736A45 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3848C7F71DEA08CE00736A45 /* AppDelegate.m */; };
 		3848C8071DEA08CF00736A45 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3848C7FC1DEA08CF00736A45 /* SettingsViewController.m */; };
 		3848C8081DEA08CF00736A45 /* TransitionSegues.m in Sources */ = {isa = PBXBuildFile; fileRef = 3848C7FE1DEA08CF00736A45 /* TransitionSegues.m */; };
 		3848C8091DEA08CF00736A45 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3848C8001DEA08CF00736A45 /* ViewController.m */; };
-		3848C80A1DEA08CF00736A45 /* ViewControllerSw.m in Sources */ = {isa = PBXBuildFile; fileRef = 3848C8021DEA08CF00736A45 /* ViewControllerSw.m */; };
 		3848C80B1DEA0D7C00736A45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3848C7F81DEA08CE00736A45 /* Assets.xcassets */; };
 		3848C8111DEA0E8D00736A45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3848C80D1DEA0E8D00736A45 /* LaunchScreen.storyboard */; };
 		3848C8121DEA0E8D00736A45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3848C80F1DEA0E8D00736A45 /* Main.storyboard */; };
+		8CA06D7C1F1184D40058A0CC /* ViewControllerSw.m in Sources */ = {isa = PBXBuildFile; fileRef = 3848C8021DEA08CF00736A45 /* ViewControllerSw.m */; };
+		8CA06D7D1F1184F50058A0CC /* SpringbackControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3848C7F11DEA070600736A45 /* SpringbackControl.swift */; };
+		8CFC3D8C1F118D720015F664 /* SpringbackControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3848C7F11DEA070600736A45 /* SpringbackControl.swift */; };
+		8CFC3D911F118E290015F664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFC3D8E1F118E1C0015F664 /* Main.storyboard */; };
+		8CFC3D931F118E710015F664 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CFC3D921F118E710015F664 /* Info.plist */; };
+		8CFC3D941F118F410015F664 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3848C80D1DEA0E8D00736A45 /* LaunchScreen.storyboard */; };
+		8CFC3D951F118F4E0015F664 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3848C7F81DEA08CE00736A45 /* Assets.xcassets */; };
+		8CFC3D971F1190740015F664 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC3D961F1190740015F664 /* ViewController.swift */; };
+		8CFC3D9A1F1191040015F664 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC3D981F1191040015F664 /* SettingsViewController.swift */; };
+		8CFC3D9B1F1191040015F664 /* TransitionSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC3D991F1191040015F664 /* TransitionSegues.swift */; };
+		8CFC3D9D1F12572D0015F664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA06D7E1F1186630058A0CC /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,10 +49,24 @@
 		3848C80E1DEA0E8D00736A45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Demo/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3848C8101DEA0E8D00736A45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Demo/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		389860CA1DA0A2B200FA4127 /* Springback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Springback.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CA06D7E1F1186630058A0CC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = DemoSwift/AppDelegate.swift; sourceTree = "<group>"; };
+		8CFC3D781F118BDF0015F664 /* Springbackswift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Springbackswift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CFC3D8F1F118E1C0015F664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DemoSwift/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8CFC3D921F118E710015F664 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = DemoSwift/Info.plist; sourceTree = "<group>"; };
+		8CFC3D961F1190740015F664 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = DemoSwift/ViewController.swift; sourceTree = "<group>"; };
+		8CFC3D981F1191040015F664 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = DemoSwift/SettingsViewController.swift; sourceTree = "<group>"; };
+		8CFC3D991F1191040015F664 /* TransitionSegues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionSegues.swift; path = DemoSwift/TransitionSegues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		389860C71DA0A2B200FA4127 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CFC3D751F118BDF0015F664 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -57,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				389861091DA0AC8F00FA4127 /* Demo */,
+				8CA06D781F1184340058A0CC /* DemoSwift */,
 				389860CC1DA0A2B200FA4127 /* Control */,
 				389860CD1DA0A2B200FA4127 /* Supporting Files */,
 				389860CB1DA0A2B200FA4127 /* Products */,
@@ -67,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				389860CA1DA0A2B200FA4127 /* Springback.app */,
+				8CFC3D781F118BDF0015F664 /* Springbackswift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,6 +137,19 @@
 			name = Demo;
 			sourceTree = "<group>";
 		};
+		8CA06D781F1184340058A0CC /* DemoSwift */ = {
+			isa = PBXGroup;
+			children = (
+				8CA06D7E1F1186630058A0CC /* AppDelegate.swift */,
+				8CFC3D921F118E710015F664 /* Info.plist */,
+				8CFC3D8E1F118E1C0015F664 /* Main.storyboard */,
+				8CFC3D981F1191040015F664 /* SettingsViewController.swift */,
+				8CFC3D961F1190740015F664 /* ViewController.swift */,
+				8CFC3D991F1191040015F664 /* TransitionSegues.swift */,
+			);
+			name = DemoSwift;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,18 +170,40 @@
 			productReference = 389860CA1DA0A2B200FA4127 /* Springback.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8CFC3D771F118BDF0015F664 /* Springbackswift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CFC3D871F118BE00015F664 /* Build configuration list for PBXNativeTarget "Springbackswift" */;
+			buildPhases = (
+				8CFC3D741F118BDF0015F664 /* Sources */,
+				8CFC3D751F118BDF0015F664 /* Frameworks */,
+				8CFC3D761F118BDF0015F664 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Springbackswift;
+			productName = springbackswift;
+			productReference = 8CFC3D781F118BDF0015F664 /* Springbackswift.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		389860C21DA0A2B200FA4127 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Sheun  Olatunbosun";
 				TargetAttributes = {
 					389860C91DA0A2B200FA4127 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0830;
+					};
+					8CFC3D771F118BDF0015F664 = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -161,6 +221,7 @@
 			projectRoot = "";
 			targets = (
 				389860C91DA0A2B200FA4127 /* Springback */,
+				8CFC3D771F118BDF0015F664 /* Springbackswift */,
 			);
 		};
 /* End PBXProject section */
@@ -170,9 +231,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CFC3D931F118E710015F664 /* Info.plist in Resources */,
 				3848C8121DEA0E8D00736A45 /* Main.storyboard in Resources */,
 				3848C80B1DEA0D7C00736A45 /* Assets.xcassets in Resources */,
 				3848C8111DEA0E8D00736A45 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CFC3D761F118BDF0015F664 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CFC3D911F118E290015F664 /* Main.storyboard in Resources */,
+				8CFC3D941F118F410015F664 /* LaunchScreen.storyboard in Resources */,
+				8CFC3D951F118F4E0015F664 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,13 +256,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				3848C8031DEA08CF00736A45 /* AppDelegate.m in Sources */,
-				3848C80A1DEA08CF00736A45 /* ViewControllerSw.m in Sources */,
+				8CA06D7C1F1184D40058A0CC /* ViewControllerSw.m in Sources */,
 				3848C8091DEA08CF00736A45 /* ViewController.m in Sources */,
-				3848C7F31DEA070600736A45 /* SpringbackControl.swift in Sources */,
 				3848C8071DEA08CF00736A45 /* SettingsViewController.m in Sources */,
 				3848C7F21DEA070600736A45 /* SpringbackControl.m in Sources */,
 				3848C8081DEA08CF00736A45 /* TransitionSegues.m in Sources */,
 				3848C7F51DEA08A700736A45 /* main.m in Sources */,
+				8CA06D7D1F1184F50058A0CC /* SpringbackControl.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CFC3D741F118BDF0015F664 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CFC3D8C1F118D720015F664 /* SpringbackControl.swift in Sources */,
+				8CFC3D9A1F1191040015F664 /* SettingsViewController.swift in Sources */,
+				8CFC3D971F1190740015F664 /* ViewController.swift in Sources */,
+				8CFC3D9D1F12572D0015F664 /* AppDelegate.swift in Sources */,
+				8CFC3D9B1F1191040015F664 /* TransitionSegues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +293,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				3848C8101DEA0E8D00736A45 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8CFC3D8E1F118E1C0015F664 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CFC3D8F1F118E1C0015F664 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -338,6 +430,38 @@
 			};
 			name = Release;
 		};
+		8CFC3D881F118BE00015F664 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = DemoSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dukour.SpringbackDemoSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8CFC3D891F118BE00015F664 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = DemoSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dukour.SpringbackDemoSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -355,6 +479,15 @@
 			buildConfigurations = (
 				389860F81DA0A2B200FA4127 /* Debug */,
 				389860F91DA0A2B200FA4127 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CFC3D871F118BE00015F664 /* Build configuration list for PBXNativeTarget "Springbackswift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CFC3D881F118BE00015F664 /* Debug */,
+				8CFC3D891F118BE00015F664 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

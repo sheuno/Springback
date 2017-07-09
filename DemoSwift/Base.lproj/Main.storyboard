@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pEb-Id-MOB">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--MainView Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="MainView Controller" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="MainView Controller" customClass="ViewController" customModule="Springbackswift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -101,7 +101,7 @@
                                 <color key="backgroundColor" red="0.29097722939999998" green="0.90170599490000003" blue="0.2415058692" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                             </view>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PhD-fX-ZJa" userLabel="SpringbackControl" customClass="SpringbackControl">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PhD-fX-ZJa" userLabel="SpringbackControl" customClass="SpringbackControlSw" customModule="Springbackswift" customModuleProvider="target">
                                 <rect key="frame" x="16" y="156" width="260" height="308"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -198,13 +198,15 @@
                                     <constraint firstAttribute="height" constant="30" id="A94-aS-qYW"/>
                                     <constraint firstAttribute="width" constant="30" id="fwf-GW-W0J"/>
                                 </constraints>
-                                <state key="normal" title="&gt;&gt;"/>
+                                <state key="normal" title="&gt;&gt;">
+                                    <color key="titleColor" red="0.91309683709476186" green="0.98728950777202074" blue="0.1430161950471151" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <segue destination="pEb-Id-MOB" kind="custom" customClass="FromRightSegue" id="7ix-EC-Ueb"/>
+                                    <segue destination="pEb-Id-MOB" kind="custom" customClass="FromRightSegue" customModule="Springbackswift" customModuleProvider="target" id="7ix-EC-Ueb"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.17672088814625095" green="0.53761487415440401" blue="0.83810314119170981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hzX-OS-zgW" firstAttribute="top" secondItem="Mjc-Ik-834" secondAttribute="bottom" constant="8" id="8us-Tk-6Ej"/>
                             <constraint firstItem="hMY-Ph-7a6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="9WJ-Vc-KJL"/>
@@ -243,7 +245,6 @@
                         <outlet property="springbackControl" destination="PhD-fX-ZJa" id="pkx-le-LP4"/>
                         <outlet property="vOffsetLabel" destination="5r1-ae-AdA" id="jYU-0k-VSx"/>
                         <outlet property="vOffsetSlider" destination="w6Q-wa-2bf" id="6xm-zG-ln0"/>
-                        <outlet property="view" destination="8bC-Xf-vdC" id="FeI-hq-1eG"/>
                         <outlet property="xScrollView" destination="2Qo-E9-72d" id="15y-mE-qYi"/>
                         <outlet property="yScrollView" destination="uP3-fU-kHL" id="ATd-f3-gWe"/>
                     </connections>
@@ -255,7 +256,7 @@
         <!--Settings View Controller-->
         <scene sceneID="Bux-MC-RAT">
             <objects>
-                <viewController storyboardIdentifier="Settings" id="AEw-fP-Uns" userLabel="Settings View Controller" customClass="SettingsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Settings" id="AEw-fP-Uns" userLabel="Settings View Controller" customClass="SettingsViewController" customModule="Springbackswift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mke-jw-15b"/>
                         <viewControllerLayoutGuide type="bottom" id="6k6-0P-coI"/>
@@ -383,7 +384,7 @@
         <!--MainView2 Controller-->
         <scene sceneID="U8o-6S-TuX">
             <objects>
-                <viewController id="pEb-Id-MOB" userLabel="MainView2 Controller" customClass="ViewControllerSw" sceneMemberID="viewController">
+                <viewController id="pEb-Id-MOB" userLabel="MainView2 Controller" customClass="ViewController" customModule="Springbackswift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Yb-FB-Mgg"/>
                         <viewControllerLayoutGuide type="bottom" id="6kR-kv-7PX"/>
@@ -472,7 +473,7 @@
                                 <color key="backgroundColor" red="0.29097722939999998" green="0.90170599490000003" blue="0.2415058692" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                             </view>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCb-8T-R8Z" userLabel="SpringbackControl" customClass="SpringbackControlSw" customModule="Springback" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCb-8T-R8Z" userLabel="SpringbackControl" customClass="SpringbackControlSw" customModule="Springbackswift" customModuleProvider="target">
                                 <rect key="frame" x="16" y="156" width="260" height="308"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.90170599490000003" green="0.85860801890000005" blue="0.18628735839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -569,13 +570,15 @@
                                     <constraint firstAttribute="width" constant="30" id="hH4-Eu-ZYe"/>
                                     <constraint firstAttribute="height" constant="30" id="ixg-zb-hFj"/>
                                 </constraints>
-                                <state key="normal" title="&lt;&lt;"/>
+                                <state key="normal" title="&lt;&lt;">
+                                    <color key="titleColor" red="0.91309683709476186" green="0.98728950777202074" blue="0.1430161950471151" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="custom" customClass="FromLeftSegue" id="AmA-YS-ZR8"/>
+                                    <segue destination="BYZ-38-t0r" kind="custom" customClass="FromLeftSegue" customModule="Springbackswift" customModuleProvider="target" id="AmA-YS-ZR8"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.082867013287297009" green="0.11482347103458558" blue="0.18873445006365275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.19676456577988227" green="0.20352315303515894" blue="0.21766880799067356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Cph-Sg-1Yp" firstAttribute="leading" secondItem="UuO-IW-Jnx" secondAttribute="trailing" constant="8" id="27b-wq-a0o"/>
                             <constraint firstItem="UuO-IW-Jnx" firstAttribute="top" secondItem="4Te-Ql-3rq" secondAttribute="bottom" constant="8" id="2hk-VR-FNC"/>
@@ -614,7 +617,6 @@
                         <outlet property="springbackControl" destination="JCb-8T-R8Z" id="bxT-j1-A2p"/>
                         <outlet property="vOffsetLabel" destination="Vrc-aP-RUj" id="Sbh-1o-ZtF"/>
                         <outlet property="vOffsetSlider" destination="eM8-Jx-4PS" id="lt1-v1-Ox2"/>
-                        <outlet property="view" destination="n4N-yj-rgr" id="t31-Jc-fX6"/>
                         <outlet property="xScrollView" destination="4Te-Ql-3rq" id="yQq-qr-i3m"/>
                         <outlet property="yScrollView" destination="Cph-Sg-1Yp" id="NmJ-H6-m7m"/>
                     </connections>
